@@ -1,0 +1,2 @@
+class RestlistsController < ApplicationController
+end
