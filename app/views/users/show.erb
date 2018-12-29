@@ -1,0 +1,9 @@
+<h1>User show page</h1>
+
+<p><%= @user.username %></p>
+
+<%= button_to 'Logout', logout_path, method: :delete %>
+
+<% if current_user.id == @user.id %>
+  <%= button_to 'Deactivate account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
