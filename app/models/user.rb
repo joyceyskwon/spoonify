@@ -23,11 +23,11 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   def following?(other_user)
-    following_users.find_by_followed_id(other_user.id)
+    followed_users.find_by_followed_id(other_user.id)
   end
 
   def followed_users?(other_user)
-    following_users.find_by_followed_id(other_user.id)
+    followed_users.find_by_followed_id(other_user.id)
   end
 
   def follow!(other_user)
@@ -35,7 +35,7 @@ class User < ApplicationRecord
   end
 
   def unfollow!(other_user)
-    following_users.find_by_followed_id(other_user.id).destroy
+    followed_users.find_by_followed_id(other_user.id).destroy
   end
 
 end # end of User class

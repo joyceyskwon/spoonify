@@ -14,7 +14,9 @@ This app uses restaurant API that uses geo-location to better search for restaur
 
 This is a first version and the next version will have more additional features, like incentive programs via points you get from number of reservations made by your followers through your lists. That would be really awesome!
 
-
+<!-- user is able to add new restaurants from others' lists -->
+<!-- user is able to make reservation -->
+<!-- user is able to follow other people's lists -->
 
 <!-- This README would normally document whatever steps are necessary to get the
 application up and running.
