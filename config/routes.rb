@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/spoonify', to: 'static_pages#home', as: 'home'
+  
   resources :users, only: [:show, :new, :create, :destroy]
   # get '/signup', to: 'users#new', as: 'signup'
 
