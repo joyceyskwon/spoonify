@@ -3,14 +3,14 @@ class FollowingsController < ApplicationController
   def create
     @user = User.find(params[:followed_id])
     current_user.follow!(@user)
-    flash[:notice] = "You are now following #{@user.username}"
+    flash[:notice] = "#{@user.username} followed!!"
     redirect_to @user
   end
 
   def destroy
-    @user = Following.find(params[:id]).followed
+    @user = User.find(params[:followed_id])
     current_user.unfollow!(@user)
-    redirect_to @user
+    return redirect_to @user, flash: {notice: 'Unfollowed!!'}
   end
 
 end # end of FollowingsController
