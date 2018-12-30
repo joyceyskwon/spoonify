@@ -2,8 +2,18 @@
 
 <p><%= @user.username %></p>
 
+<% if current_user.following?(@user) %>
+You are now following <%= @user.username %>
+<%= button_to 'Unfollow', unfollow_path(followed_id:  @user.id), method: :delete %>
+<% else %>
+<% if current_user.id != @user.id %>
+  <%= button_to 'Follow', follow_path(followed_id:  @user.id), method: :post %>
+<% end %>
+<% end %>
+
+
 <%= button_to 'Logout', logout_path, method: :delete %>
 
 <% if current_user.id == @user.id %>
-  <%= button_to 'Deactivate account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= button_to 'Deactivate account', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
