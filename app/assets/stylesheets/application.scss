@@ -88,6 +88,24 @@ a {
 abbr[title] {
   border: none;
 }
+.btn-primary {
+  border-color: #dd3b2a;
+  color: #fff;
+  background-color: #dd3b2a;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    border-color: #dd3b2a;
+    color: #fff;
+    background-color: #dd3b2a;
+}
 .preamble abbr,
 .supporting div abbr,
 .requirements abbr {

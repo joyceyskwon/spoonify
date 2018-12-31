@@ -1,0 +1,14 @@
+<h1>New Restaurant</h1>
+
+<%= form_for @restaurant do |f| %>
+  <%= f.collection_select :list_id, @lists, :id, :list_name %>
+  <%= f.label :name %><br>
+  <br>
+  <%= f.text_field :name %><br>
+  <br>
+
+  <%= f.label :yelp_url %><br>
+  <br>
+  <%= f.text_field :yelp_url %><br>
+  <br>
+<% end %>
