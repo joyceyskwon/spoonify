@@ -2,15 +2,25 @@
 
 <% if current_user.id != @user.id %>
   <% if current_user.following?(@user) %>
-    <%= button_to 'Unfollow', unfollow_path(followed_id:  @user.id), method: :delete %>
+    <%= button_to 'Unfollow', unfollow_path(followed_id:  @user.id), method: :delete %><br>
+    <br>
   <% else %>
-    <%= button_to 'Follow', follow_path(followed_id:  @user.id), method: :post %>
+    <%= button_to 'Follow', follow_path(followed_id:  @user.id), method: :post %><br>
+    <br>
   <% end %>
+  <%= link_to 'Back to my profile', user_path(current_user) %><br>
 <% end %>
 
 <% if current_user.id == @user.id %>
-  <%= link_to 'Update username/password', edit_user_path(@user) %>
+  <%= button_to 'Update Account', edit_user_path(@user), method: :patch %>
   <%= button_to 'Logout', logout_path, method: :delete %>
-  <%= button_to 'Deactivate account', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= button_to 'Deactivate', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  <h4>You are currently following:</h4>
+  <ul>
+    <% current_user.followeds.each do |followed| %>
+      <li><%= link_to followed.username.capitalize, followed %></li>
+    <% end %>
+  </ul>
 
 <% end %>
