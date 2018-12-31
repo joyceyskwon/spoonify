@@ -9,6 +9,8 @@
 <% end %>
 
 <% if current_user.id == @user.id %>
+  <%= link_to 'Update username/password', edit_user_path(@user) %>
   <%= button_to 'Logout', logout_path, method: :delete %>
   <%= button_to 'Deactivate account', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <% end %>

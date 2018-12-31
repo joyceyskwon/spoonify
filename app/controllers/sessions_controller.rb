@@ -21,7 +21,8 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     # session[:user_id] = nil
     flash[:notice] = 'You logged out!'
-    redirect_to login_path
+    byebug
+    redirect_to home_path
   end
 
 end # end of SessionsController

@@ -21,6 +21,22 @@ class UsersController < ApplicationController
     # end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    if @user.valid?
+      flash[:notice] = 'You have successfully updated your account!'
+      redirect_to @user
+    else
+      flash[:notice] = 'Invalid input. Try again.'
+      render :edit
+    end
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
