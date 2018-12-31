@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2018_12_29_162837) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.integer "list_id"
     t.string "name"
+    t.string "address"
     t.decimal "lat"
     t.decimal "lng"
     t.string "yelp_url"

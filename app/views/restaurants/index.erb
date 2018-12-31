@@ -3,5 +3,6 @@
 <ul>
   <% @restaurants.each do |restaurant| %>
     <li><%= link_to restaurant.name, restaurant %></li>
+    <li>saved in <%= link_to restaurant.restlists.count %> list(s)</li>
   <% end %>
 </ul>

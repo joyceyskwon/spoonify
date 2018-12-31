@@ -1,0 +1,7 @@
+<h1><%= @restaurant.name.capitalize %></h1>
+
+<p>This restaurant is saved in <%= @restaurant.restlists.count %> list(s)</p>
+
+<p>Address: <%= @restaurant.address %></p>
+
+<%= link_to 'Learn more', @restaurant.yelp_url %>
