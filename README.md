@@ -17,6 +17,7 @@ This is a first version and the next version will have more additional features,
 <!-- user is able to add new restaurants from others' lists -->
 <!-- user is able to make reservation -->
 <!-- user is able to follow other people's lists -->
+<!-- lists have view counts so users can see which list is being viewed the most -->
 
 <!-- This README would normally document whatever steps are necessary to get the
 application up and running.

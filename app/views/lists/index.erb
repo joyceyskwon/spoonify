@@ -1,0 +1,4 @@
+<% @lists.each do |list| %>
+  <%= link_to list.list_name, list %>
+  <%= link_to @list.user_id, user_path(@user) %>
+<% end %>
