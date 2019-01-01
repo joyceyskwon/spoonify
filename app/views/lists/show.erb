@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "application" %>
+
+<% if current_user.id != @user %>
+  <% if @list.public? %>
+    <h1><%= @list.list_name.capitalize %></h1>
+
+    <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
+
+  <ul>
+    <% @list.restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant %></li>
+    <% end %>
+  </ul>
+
+  <% else %>
+    <%= flash[:notice] = 'Sorry, this list is private!' %>
+  <% end %>
+
+<% else %>
+<h1><%= @list.list_name.capitalize %></h1>
+  <%= button_to 'Edit list', edit_list_path, method: :patch, class: 'btn btn-primary' %>
+
+  <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
+
+  <ul>
+    <% @list.restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant %></li>
+    <% end %>
+  </ul>
+  
+<% end %>

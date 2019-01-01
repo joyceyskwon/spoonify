@@ -4,7 +4,8 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.fine(params[:id])
+    @list = List.find(params[:id])
+    @user = @list.user_id
   end
 
   def new

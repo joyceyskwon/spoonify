@@ -1,4 +1,4 @@
 <% @lists.each do |list| %>
-  <%= link_to list.list_name, list %>
-  <%= link_to @list.user_id, user_path(@user) %>
+  <%= link_to list.list_name.capitalize, list %>
+  <%= link_to 'by' list.user.username.capitalize, user_path(list.user_id) %>
 <% end %>

@@ -1,0 +1,14 @@
+<h1>Edit List</h1>
+
+<%= form_for @list do |f| %>
+  <p>Creator: <%= current_user.username.capitalize %></p>
+  <%= f.label :list_name%><br>
+  <br>
+  <%= f.text_field :list_name%><br>
+  <br>
+  <%= f.label :public%><br>
+  <br>
+  <%= f.check_box :public%><br>
+  <br>
+  <%= f.submit 'Update list'%><br>
+<% end %>

@@ -2,6 +2,8 @@
 <h1><%= @user.username.capitalize %></h1>
 
 <% if current_user.id != @user.id %>
+  <p><%= @user.username.capitalize %> has <%= @user.followers.count %> follower(s)</p>
+
   <% if current_user.following?(@user) %>
     <%= button_to 'Unfollow', unfollow_path(followed_id:  @user.id), method: :delete, class: 'btn btn-primary', remote: true %><br>
     <br>
@@ -9,10 +11,17 @@
     <%= button_to 'Follow', follow_path(followed_id:  @user.id), method: :post, class: 'btn btn-primary', remote: true %><br>
     <br>
   <% end %>
+
+  <% @user.lists.each do |list| %>
+    <%= link_to list.list_name, list %>
+    <p><%= list.restaurants.count %> spots</p>
+  <% end %>
+
   <%= link_to 'Back to my profile', user_path(current_user) %><br>
 <% end %>
 
 <% if current_user.id == @user.id %>
+  <p>You have <%= current_user.followers.count %> follower(s)</p>
   <%= button_to 'Update Account', edit_user_path(@user), method: :patch, class: 'btn btn-primary', remote: true %>
   <br>
   <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-primary', remote: true  %>
@@ -24,6 +33,13 @@
   <ul>
     <% current_user.followeds.each do |followed| %>
       <li><%= link_to followed.username.capitalize, followed %></li>
+    <% end %>
+  </ul>
+
+  <h4>Your List</h4>
+  <ul>
+    <% current_user.lists.each do |list| %>
+      <li><%= link_to list.list_name.capitalize, list %> – <%= list.restaurants.count %> spot(s)</li>
     <% end %>
   </ul>
 

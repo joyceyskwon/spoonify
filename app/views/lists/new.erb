@@ -1,0 +1,14 @@
+<h1>New List</h1>
+
+<%= form_for @list do |f| %>
+  <%= f.collection_select :user_id, current_user, :id, :username%>
+  <%= f.label :list_name%><br>
+  <br>
+  <%= f.text_field :list_name%><br>
+  <br>
+  <%= f.label :public%><br>
+  <br>
+  <%= f.check_box :public%><br>
+  <br>
+  <%= f.submit 'Create list'%><br>
+<% end %>
