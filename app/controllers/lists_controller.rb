@@ -3,6 +3,18 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  def search
+    query = params[:search].downcase.strip
+    @list = List.find_by(list_name: query)
+    # @user = User.find(params[:id])
+    if !@list
+      flash[:notice] = "Sorry, try again!"
+      redirect_to home_path
+    else
+      render list_path(@list)
+    end
+  end
+
   def show
     @list = List.find(params[:id])
     @user = @list.user_id
@@ -46,7 +58,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:user_id, :list_name, :public)
+    params.require(:list).permit(:user_id, :list_name, :public, :search)
   end
 
 end # end of ListsController

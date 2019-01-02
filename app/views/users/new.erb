@@ -1,11 +1,17 @@
-<h1>Sign up</h1>
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container">
+      <h1>Sign up</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-  <br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
-  <br>
-  <%= f.submit "Create account" %>
-<% end %>
+      <%= form_for @user do |f| %>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br>
+        <br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br>
+        <br>
+        <%= f.submit "Create account" %>
+      <% end %>
+    </div>
+  </div>
+</header>

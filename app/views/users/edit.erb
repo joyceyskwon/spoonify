@@ -1,11 +1,19 @@
-<h3>Update Account</h3>
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container">
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br>
-  <br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
-  <br>
-  <%= f.submit "Update account" %>
-<% end %>
+      <h3>Update Account</h3>
+
+      <%= form_for @user do |f| %>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br>
+        <br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br>
+        <br>
+        <%= f.submit "Update account" %>
+      <% end %>
+
+    </div>
+  </div>
+</header>

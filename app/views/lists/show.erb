@@ -1,31 +1,31 @@
-<%= stylesheet_link_tag "application" %>
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container">
 
-<% if current_user.id != @user %>
-  <% if @list.public? %>
-    <h1><%= @list.list_name.capitalize %></h1>
+      <% if current_user.id != @user %>
+        <% if @list.public? %>
+          <h1><%= @list.list_name.capitalize %></h1>
+          <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
+          <% @list.restaurants.each do |restaurant| %>
+            <%= link_to restaurant.name, restaurant %>
+          <% end %>
+        <% else %>
+          <%= flash[:notice] = 'Sorry, this list is private!' %>
+        <% end %>
 
-    <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
+      <% else %>
+      <h1><%= @list.list_name.capitalize %></h1>
+        <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
 
-  <ul>
-    <% @list.restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant %></li>
-    <% end %>
-  </ul>
+        <%= button_to 'Edit list', edit_list_path, method: :get, class: 'btn btn-primary' %>
 
-  <% else %>
-    <%= flash[:notice] = 'Sorry, this list is private!' %>
-  <% end %>
+          <% @list.restaurants.each do |restaurant| %>
+            <%= link_to restaurant.name, restaurant %>
+          <% end %>
 
-<% else %>
-<h1><%= @list.list_name.capitalize %></h1>
-  <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id) %></p>
 
-  <%= button_to 'Edit list', edit_list_path, method: :patch, class: 'btn btn-primary' %>
+      <% end %>
 
-  <ul>
-    <% @list.restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant %></li>
-    <% end %>
-  </ul>
-
-<% end %>
+    </div>
+  </div>
+</header>
