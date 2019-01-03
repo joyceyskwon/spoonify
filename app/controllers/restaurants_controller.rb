@@ -14,7 +14,7 @@ class RestaurantsController < ApplicationController
     @lists = current_user.lists
     if @restaurant.valid?
       flash[:notice] = 'You have successfully enlisted a restaurant!'
-      redirect_to @restaurant
+      redirect_to list_path(@restaurant.list)
     else
       flash[:notice] = 'Ooops! Please try again.'
       render :new

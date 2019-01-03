@@ -2,16 +2,13 @@
 
 <%= form_for @restaurant do |f| %>
   <%= f.label :name %><br>
-  <br>
   <%= f.text_field :name %><br>
   <br>
-  <%= f.label :address %><br>
-  <br>
-  <%= f.text_field :address %><br>
-  <br>
   <%= f.label :yelp_url %><br>
-  <br>
   <%= f.text_field :yelp_url %><br>
   <br>
   <%= f.submit 'Update restaurant' %>
 <% end %>
+<br>
+<br>
+<%= button_to 'Back', restaurant_path(@restaurant), method: :get, class: 'btn btn-primary', remote: true %>

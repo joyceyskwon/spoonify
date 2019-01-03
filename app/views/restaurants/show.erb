@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag "application" %>
 <h1><%= @restaurant.name.capitalize %></h1>
-
-<p>This restaurant is saved in <%= @restaurant.restlists.count %> list(s)</p>
-
-<p>Address: <%= @restaurant.address %></p>
-
-<%= link_to 'Learn more', @restaurant.yelp_url %>
+<br>
+<p>This restaurant is saved in <%= link_to @restaurant.list.list_name.capitalize, list_path(@restaurant.list), class: 'link-to' %> list!</p>
+<br>
+<%= button_to 'Yelp this!', @restaurant.yelp_url, method: :get, class: 'btn btn-primary', remote: true, form: {target: '_blank'} %>
+<br>
+<%= button_to 'Edit', edit_restaurant_path(@restaurant), method: :get, class: 'btn btn-primary', remote: true %>

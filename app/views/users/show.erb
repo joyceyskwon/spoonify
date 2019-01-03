@@ -54,6 +54,11 @@
       <p>___________________________________</p>
     <% end %>
 
-  <%= button_to 'Create a new list', new_list_path, method: :get, class: 'btn btn-primary', remote: true %>
+  <%= button_to 'Create a new list', new_list_path, method: :get, class: 'btn btn-primary', remote: true %><br>
+  <br>
+
+  <% if current_user.lists != [] %>
+    <%= button_to 'Add a restaurant', new_restaurant_path, method: :get, class: 'btn btn-primary', remote: true %>
+  <% end %>
 
 <% end %>

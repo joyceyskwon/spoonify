@@ -11,3 +11,6 @@
   <br>
   <%= f.submit 'Update list'%><br>
 <% end %>
+<br>
+<br>
+<%= button_to 'Back', list_path(@list), method: :get, class: 'btn btn-primary', remote: true %>

@@ -3,6 +3,10 @@
 <br>
 
 <% current_user.followers.each do |follower| %>
+  <p>__________________________________________________________</p>
   <%= link_to follower.username.capitalize, follower, class: "link-to"%><br>
+  <p>__________________________________________________________</p>
   <br>
 <% end %>
+
+<%= link_to 'Back to profile', user_path(current_user), class: "link-to" %>

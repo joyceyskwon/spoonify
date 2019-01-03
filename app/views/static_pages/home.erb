@@ -10,6 +10,7 @@
     <!-- <p>Save all your favorite spots and find more places to eat!</p> -->
     <%= form_tag(search_path, method: :get, class: 'search_bar') do %>
       <%= text_field_tag(:search, params[:search]) %>
+      <%# <%= select_tag 'list_id', options_for_select(@lists.collect{ |list| [list.list_name, list.id] }) %>
       <%= submit_tag("Search", name: nil, class: 'btn btn-primary') %>
     <% end %>
   </div>
