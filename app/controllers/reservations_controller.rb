@@ -1,18 +1,23 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.all
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
   end
 
   def new
     @reservation = Reservation.new
-    @restaurant = Restaurant.find(params[:id])
+    @restaurants = Restaurant.all
   end
 
   def create
     @reservation = Reservation.create(reservation_params)
-    @restaurant = Restaurant.find(params[:id])
+    @restaurants = Restaurant.all
     if @reservation.valid?
-      redirect_to @reservation
+      flash[:notice] = "Success! Your reservation for #{@reservation.restaurant.name.capitalize} is made on #{@reservation.date_time}."
+      redirect_to reservations_path
     else
       flash[:notice] = "Woops, please try again!"
       render :new
@@ -39,7 +44,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation),permit(:restaurant_id, :date, :time, :num_of_people)
+    params.require(:reservation).permit(:restaurant_id, :date_time, :num_of_people, :user_id)
   end
 
 end # end of ReservationsController

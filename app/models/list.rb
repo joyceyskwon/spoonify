@@ -4,7 +4,6 @@ class List < ApplicationRecord
   # has_many :restlists
   # has_many :restaurants, through: :restlists
 
-
   validates :list_name, presence: true
 
 end

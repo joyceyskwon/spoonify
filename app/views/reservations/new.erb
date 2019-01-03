@@ -1,12 +1,15 @@
+<%= stylesheet_link_tag "application" %>
 <h1>Create Reservation!</h1>
-
+<br>
 <%= form_for @reservation do |f| %>
-  <%= f.hidden_field :restaurant_id, { value: @restaurant.id } %>
+  <%= f.hidden_field :user_id, { value: current_user.id } %>
+  <%= f.collection_select :restaurant_id, @restaurants, :id, :name%>
+  <br>
   <%= f.label :date_time %><br>
   <%= f.datetime_local_field :date_time %><br>
   <br>
   <%= f.label :num_of_people %><br>
   <%= f.number_field :num_of_people %><br>
   <br>
-  <%= f.submit "Create reservation" %>
+  <%= f.submit "Create reservation", class: 'btn btn-primary'%>
 <% end %>

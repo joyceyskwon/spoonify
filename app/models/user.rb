@@ -13,6 +13,8 @@ class User < ApplicationRecord
   #   BCrypt::Password.new(self.password_digest) == pt_pw
   # end
   has_many :lists
+  has_many :reservations
+  has_many :restaurants, through: :reservations
 
   has_many :following_users, foreign_key: :followed_id, class_name: 'Following'
   has_many :followers, through: :following_users

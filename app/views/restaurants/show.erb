@@ -3,6 +3,10 @@
 <br>
 <p>This restaurant is saved in <%= link_to @restaurant.list.list_name.capitalize, list_path(@restaurant.list), class: 'link-to' %> list!</p>
 <br>
-<%= button_to 'Yelp this!', @restaurant.yelp_url, method: :get, class: 'btn btn-primary', remote: true, form: {target: '_blank'} %>
+<%= button_to 'Yelp this!', @restaurant.yelp_url, method: :get, class: 'btn btn-primary', remote: true, form: { target: '_blank' } %>
 <br>
-<%= button_to 'Edit', edit_restaurant_path(@restaurant), method: :get, class: 'btn btn-primary', remote: true %>
+<%= button_to 'Make reservation!', new_reservation_path, method: :get, class: 'btn btn-primary', remote: true %><br>
+<br>
+<% if current_user %>
+  <%= button_to 'Edit', edit_restaurant_path(@restaurant), method: :get, class: 'btn btn-primary', remote: true %>
+<% end %>

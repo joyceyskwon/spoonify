@@ -9,4 +9,4 @@
   <br>
 <% end %>
 
-<%= link_to 'Back to profile', user_path(current_user), class: "link-to" %>
+<%= button_to 'Back to profile', user_path(current_user), method: :get, class: "link-to", remote: true %>

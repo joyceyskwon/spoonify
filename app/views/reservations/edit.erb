@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "application" %>
+<h1>Edit Reservation!</h1>
+<br>
+<%= form_for @reservation do |f| %>
+  <%= f.hidden_field :user_id, { value: current_user.id } %>
+  <p>Restaurant: <%= @reservation.restaurant.name.capitalize %></p>
+  <br>
+  <%= f.label :date_time %><br>
+  <%= f.datetime_local_field :date_time %><br>
+  <br>
+  <%= f.label :num_of_people %><br>
+  <%= f.number_field :num_of_people %><br>
+  <br>
+  <%= f.submit "Make changes", class: 'btn btn-primary'%>
+<% end %>
+<br>
+<%= button_to 'DELETE', @reservation, method: :delete, confirm: 'Are you sure??', class: 'btn btn-primary', remote: true %>
+<br>
+<%= button_to 'Back', reservations_path, method: :get, class: 'btn btn-primary', remote: true %>

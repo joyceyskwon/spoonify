@@ -1,7 +1,6 @@
 class Restaurant < ApplicationRecord
   belongs_to :list
-  # has_many :restlists
-  # has_many :lists, through: :restlists
+  has_many :reservations
 
   validates :name, presence: true
   validates :name, uniqueness: true

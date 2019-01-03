@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "application" %>
+<h1>Reservations</h1>
+
+<% current_user.reservations.each do |reservation| %>
+  <p>At <%= link_to reservation.restaurant.name.capitalize, restaurant_path(reservation.restaurant_id), class: 'link-to' %> on <%= reservation.date_time %> for <%= reservation.num_of_people %></p>
+  <%= button_to 'Edit this reservation', edit_reservation_path(reservation), method: :get, class: 'btn btn-primary' %>
+  <br>
+<% end %>
+<br>
+<br>
+<%= button_to 'Go back to your profile', user_path(current_user), method: :get, class: 'btn btn-primary' %>
+<br>
