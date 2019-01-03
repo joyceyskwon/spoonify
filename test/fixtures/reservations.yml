@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  list_id: 1
   restaurant_id: 1
+  date: 2019-01-02
+  time: 2019-01-02 22:22:51
+  num_of_people: 1
 
 two:
-  list_id: 1
   restaurant_id: 1
+  date: 2019-01-02
+  time: 2019-01-02 22:22:51
+  num_of_people: 1

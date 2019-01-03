@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_29_162837) do
+ActiveRecord::Schema.define(version: 2019_01_03_032251) do
 
   create_table "followings", force: :cascade do |t|
     t.integer "followed_id"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2018_12_29_162837) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.datetime "date_time"
+    t.integer "num_of_people"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.integer "list_id"
     t.string "name"
@@ -36,13 +44,6 @@ ActiveRecord::Schema.define(version: 2018_12_29_162837) do
     t.decimal "lat"
     t.decimal "lng"
     t.string "yelp_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "restlists", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

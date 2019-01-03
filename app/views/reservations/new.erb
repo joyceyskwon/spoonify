@@ -1,0 +1,12 @@
+<h1>Create Reservation!</h1>
+
+<%= form_for @reservation do |f| %>
+  <%= f.hidden_field :restaurant_id, { value: @restaurant.id } %>
+  <%= f.label :date_time %><br>
+  <%= f.datetime_local_field :date_time %><br>
+  <br>
+  <%= f.label :num_of_people %><br>
+  <%= f.number_field :num_of_people %><br>
+  <br>
+  <%= f.submit "Create reservation" %>
+<% end %>

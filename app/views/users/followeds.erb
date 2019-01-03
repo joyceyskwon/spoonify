@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag "application" %>
+<h4>You are currently following:</h4><br>
+<br>
+
+<% current_user.followeds.each do |followed| %>
+  <%= link_to followed.username.capitalize, followed, class: "link-to" %>
+<% end %>

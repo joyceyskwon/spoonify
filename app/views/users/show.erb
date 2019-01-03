@@ -12,10 +12,15 @@
         <br>
   <% end %>
 
-      <% @user.lists.each do |list| %>
-        <%= link_to list.list_name, list %>
-        <p><%= list.restaurants.count %> spots</p>
-      <% end %>
+  <h3>Lists</h3>
+  <p>___________________________________</p>
+  <br>
+    <% @user.lists.each do |list| %>
+      <%= link_to list.list_name.capitalize, list, class: "link-to" %>
+      <p><%= list.restaurants.count %> spots</p>
+      <p>___________________________________</p>
+    <% end %>
+
 
       <%= link_to 'Back to my profile', user_path(current_user), class: "link-to" %><br>
     <% end %>
@@ -23,6 +28,14 @@
 <% if current_user.id == @user.id %>
 
   <p>You have <%= current_user.followers.count %> follower(s)</p>
+    <%= link_to 'View your followers', view_followers_path, class: "link-to" %><br>
+  <br>
+  <p>You are currently following <%= current_user.followeds.count %> user(s)</p>
+    <%= link_to 'View your followings', view_followeds_path, class: "link-to" %><br>
+  <br>
+  <%= button_to 'See more users you can follow', users_path, method: :get, class: 'btn btn-primary', remote: true %><br>
+  <br>
+
   <%= button_to 'Update Account', edit_user_path(@user), method: :get, class: 'btn btn-primary', remote: true %>
   <br>
   <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-primary', remote: true  %>
@@ -30,23 +43,17 @@
   <%= button_to 'Deactivate', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary', remote: true %>
   <br>
 
-      <h4>You are currently following:</h4>
+  <br>
+  <br>
 
-        <% current_user.followeds.each do |followed| %>
-          <%= link_to followed.username.capitalize, followed, class: "link-to" %>
-        <% end %>
+  <h4>Your List</h4>
 
-        <%= button_to 'See more users you can follow', users_path, method: :get, class: 'btn btn-primary', remote: true %>
-<br>
-<br>
-      <h4>Your List</h4>
+    <p>You have <%= current_user.lists.count %> list(s).</p>
+    <% current_user.lists.each do |list| %>
+      <%= link_to list.list_name.capitalize, list, class: "link-to" %> – <%= list.restaurants.count %> spot(s)
+      <p>___________________________________</p>
+    <% end %>
 
-        <p>You have <%= current_user.lists.count %> list(s).</p>
-        <% current_user.lists.each do |list| %>
-          <%= link_to list.list_name.capitalize, list, class: "link-to" %> – <%= list.restaurants.count %> spot(s)
-        <% end %>
-
-      <%= button_to 'Create a new list', new_list_path, method: :get, class: 'btn btn-primary', remote: true %>
-
+  <%= button_to 'Create a new list', new_list_path, method: :get, class: 'btn btn-primary', remote: true %>
 
 <% end %>

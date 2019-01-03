@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag "application" %>
+<h1><%= current_user.username.capitalize %>'s Followers</h1>
+<br>
+
+<% current_user.followers.each do |follower| %>
+  <%= link_to follower.username.capitalize, follower, class: "link-to"%><br>
+  <br>
+<% end %>

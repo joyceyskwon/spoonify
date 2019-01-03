@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :reservations
   get '/spoonify', to: 'static_pages#home', as: 'home'
 
   resources :users
+  get '/followers', to: 'users#followers', as: 'view_followers'
+  get '/followeds', to: 'users#followeds', as: 'view_followeds'
   # get '/signup', to: 'users#new', as: 'signup'
 
   # sessions routes

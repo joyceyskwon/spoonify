@@ -6,12 +6,12 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    @lists = List.all
+    @lists = current_user.lists
   end
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-    @lists = List.all
+    @lists = current_user.lists
     if @restaurant.valid?
       flash[:notice] = 'You have successfully enlisted a restaurant!'
       redirect_to @restaurant

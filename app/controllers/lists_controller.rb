@@ -7,12 +7,11 @@ class ListsController < ApplicationController
   def search
     query = params[:search].downcase.strip
     @list = List.find_by(list_name: query)
-    # @user = User.find(params[:id])
     if !@list
       flash[:notice] = "Sorry, try again!"
       redirect_to home_path
     else
-      render list_path(@list)
+      redirect_to list_path(@list)
     end
   end
 
@@ -23,16 +22,13 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @users = User.all
   end
 
   def create
     @list = List.create(list_params)
-    @users = User.all
     if @list.valid?
       redirect_to @list
     else
-            byebug
       flash[:notice] = 'Please try again'
       render :new
     end
