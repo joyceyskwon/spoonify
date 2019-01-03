@@ -1,9 +1,12 @@
-<%= stylesheet_link_tag "application" %>
+
 <header class="masthead text-center text-white">
   <div class="masthead-content">
     <div class="container">
     <h1 class="masthead-heading mb-0">🥄Spoonify</h1>
     <h2 class="masthead-subheading mb-0">Favorite places to eat in one place!</h2>
+    <br>
+    <%= button_to 'Explore', lists_path, method: :get, class: 'btn btn-primary', remote: true %><br>
+    <br>
     <!-- <p>Save all your favorite spots and find more places to eat!</p> -->
     <%= form_tag(search_path, method: :get, class: 'search_bar') do %>
       <%= text_field_tag(:search, params[:search]) %>

@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+
   def index
     @lists = List.all
   end
@@ -22,13 +23,16 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @users = User.all
   end
 
   def create
-    @list = List.new
+    @list = List.create(list_params)
+    @users = User.all
     if @list.valid?
       redirect_to @list
     else
+            byebug
       flash[:notice] = 'Please try again'
       render :new
     end

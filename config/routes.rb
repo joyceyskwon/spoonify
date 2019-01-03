@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/spoonify', to: 'static_pages#home', as: 'home'
 
-  resources :users, except: :index
+  resources :users
   # get '/signup', to: 'users#new', as: 'signup'
 
   # sessions routes
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   resources :lists
   get '/search', to: 'lists#search', as: 'search'
 
-  resources :restaurants
+  resources :restaurants, except: :index
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

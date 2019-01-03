@@ -1,17 +1,11 @@
-<header class="masthead text-center text-white">
-  <div class="masthead-content">
-    <div class="container">
-      <h1>Login</h1>
+<h1>Login</h1>
 
-      <%= form_tag(login_path) do %>
-        <%= label_tag :username %><br>
-        <%= text_field_tag :username %><br>
-        <br>
-        <%= label_tag :password %><br>
-        <%= password_field_tag :password %><br>
-        <br>
-        <%= submit_tag 'Login' %>
-      <% end %>
-    </div>
-  </div>
-</header>
+<%= form_tag(login_path) do %>
+  <%= label_tag :username %><br>
+  <%= text_field_tag :username %><br>
+  <br>
+  <%= label_tag :password %><br>
+  <%= password_field_tag :password %><br>
+  <br>
+  <%= submit_tag 'Login' %>
+<% end %>

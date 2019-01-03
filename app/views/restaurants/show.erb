@@ -1,15 +1,7 @@
-<header class="masthead text-center text-white">
-  <div class="masthead-content">
-    <div class="container">
+<h1><%= @restaurant.name.capitalize %></h1>
 
-      <h1><%= @restaurant.name.capitalize %></h1>
+<p>This restaurant is saved in <%= @restaurant.restlists.count %> list(s)</p>
 
-      <p>This restaurant is saved in <%= @restaurant.restlists.count %> list(s)</p>
+<p>Address: <%= @restaurant.address %></p>
 
-      <p>Address: <%= @restaurant.address %></p>
-
-      <%= link_to 'Learn more', @restaurant.yelp_url %>
-
-    </div>
-  </div>
-</header>
+<%= link_to 'Learn more', @restaurant.yelp_url %>

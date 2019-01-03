@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag "application" %>
+  <h1>FOLLOW THESE USERZZZŽ</h1>
+  <br>
+    <% @users.each do |user| %>
+      <%= link_to user.username.capitalize, user, class: "link-to", remote: true %><br>
+      <br>
+    <% end %>

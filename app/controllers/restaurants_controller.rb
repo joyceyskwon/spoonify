@@ -1,19 +1,17 @@
 class RestaurantsController < ApplicationController
 
-  def index
-    @restaurants = Restaurant.all
-  end
-
   def show
     @restaurant = Restaurant.find(params[:id])
   end
 
   def new
     @restaurant = Restaurant.new
+    @lists = List.all
   end
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
+    @lists = List.all
     if @restaurant.valid?
       flash[:notice] = 'You have successfully enlisted a restaurant!'
       redirect_to @restaurant

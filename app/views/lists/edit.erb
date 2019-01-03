@@ -1,21 +1,13 @@
-<header class="masthead text-center text-white">
-  <div class="masthead-content">
-    <div class="container">
+<h1>Edit List</h1>
 
-      <h1>Edit List</h1>
-
-      <%= form_for @list do |f| %>
-        <p>Creator: <%= current_user.username.capitalize %></p>
-        <%= f.label :list_name%><br>
-        <br>
-        <%= f.text_field :list_name%><br>
-        <br>
-        <%= f.label :public%>
-        <%= f.check_box :public%><br>
-        <br>
-        <%= f.submit 'Update list'%><br>
-      <% end %>
-
-    </div>
-  </div>
-</header>
+<%= form_for @list do |f| %>
+  <p>Creator: <%= current_user.username.capitalize %></p>
+  <%= f.label :list_name%><br>
+  <br>
+  <%= f.text_field :list_name%><br>
+  <br>
+  <%= f.label :public%>
+  <%= f.check_box :public%><br>
+  <br>
+  <%= f.submit 'Update list'%><br>
+<% end %>

@@ -31,26 +31,47 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
+        <!-- <svg version="1.0" id="spoonify_logo" xmlns="http://www.w3.org/2000/svg"
+         width="856.000000pt" height="1444.000000pt" viewBox="0 0 856.000000 1444.000000"
+         preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"> -->
+        <!-- <svg version="1.1" id="spoonify" class="box_transition" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"> -->
         <a class="navbar-brand" href="/spoonify">🥄Spoonify</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <% if !current_user. %>
-              <li class="nav-item">
-                <a class="nav-link" href="/users/new">Sign Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Log In</a>
-              </li>
+            <% if current_user %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= current_user.id %>"><%= current_user.username.capitalize %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users">Explore</a>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/new">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+            </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </nav>
 
-    <%= flash[:notice] %>
-    <%= yield %>
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+
+          <%= flash[:notice] %>
+          <%= yield %>
+
+        </div>
+      </div>
+    </header>
 
     <!-- <section>
       <div class="container">
@@ -115,8 +136,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-one-page-wonder/vendor/jquery/jquery.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-one-page-wonder/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 </html>
