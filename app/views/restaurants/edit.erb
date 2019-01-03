@@ -7,8 +7,11 @@
   <%= f.label :yelp_url %><br>
   <%= f.text_field :yelp_url %><br>
   <br>
-  <%= f.submit 'Update restaurant' %>
+  <%= f.submit 'Update restaurant', class: 'btn btn-primary' %>
 <% end %>
+<br>
+<br>
+<%= button_to 'DELETE', @restaurant, method: :delete, confirm: 'Are you sure?', class: 'btn btn-primary', remote: true %>
 <br>
 <br>
 <%= button_to 'Back', restaurant_path(@restaurant), method: :get, class: 'btn btn-primary', remote: true %>
