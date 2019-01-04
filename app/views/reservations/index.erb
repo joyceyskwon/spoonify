@@ -11,5 +11,8 @@
 <% end %>
 <br>
 <br>
-<%= button_to 'Go back to your profile', user_path(current_user), method: :get, class: 'btn btn-primary' %>
+<%= button_to 'Make new reservation', new_reservation_path, method: :get, class: 'btn btn-primary', remote: true %>
+<br>
+<br>
+<%= button_to 'Go back to your profile', user_path(current_user), method: :get, class: 'btn btn-primary', remote: true %>
 <br>

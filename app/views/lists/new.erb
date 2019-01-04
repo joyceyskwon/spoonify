@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "application" %>
 <h1>New List</h1>
 
 <%= form_for @list do |f| %>
@@ -8,5 +9,5 @@
   <%= f.label :public%>
   <%= f.check_box :public%><br>
   <br>
-  <%= f.submit 'Create list'%><br>
+  <%= f.submit 'Create list', class: 'btn btn-primary'%><br>
 <% end %>
