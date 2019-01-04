@@ -3,7 +3,7 @@
   <div class="masthead-content">
     <div class="container">
     <h1 class="masthead-heading mb-0">🥄Spoonify</h1>
-    <h2 class="masthead-subheading mb-0">Foodlist not playlist!</h2>
+    <h2 class="masthead-subheading mb-0">Playlist for food!</h2>
     <br>
     <%= button_to 'Explore', lists_path, method: :get, class: 'btn btn-primary', remote: true %><br>
     <br>
@@ -26,7 +26,9 @@
   <div class="row align-items-center">
     <div class="col-lg-6 order-lg-2">
       <div class="p-5">
-        <img class="img-fluid rounded-circle" src="../assets/images/01.jpg" alt="">
+        <!-- <img class="img-fluid rounded-circle" src="/images/01.jpg" alt="rss feed" /> -->
+        <!-- <img class="img-fluid rounded-circle" src="/images/spoonify_logo.png" alt="rss feed" /> -->
+        <%= image_tag "profile5.gif", class: 'img-fluid rounded-circle' %>
       </div>
     </div>
     <div class="col-lg-6 order-lg-1">
@@ -44,7 +46,7 @@
   <div class="row align-items-center">
     <div class="col-lg-6">
       <div class="p-5">
-        <img class="img-fluid rounded-circle" src="../assets/images/02.jpg" alt="">
+        <%= image_tag "profile2.gif", class: 'img-fluid rounded-circle' %>
       </div>
     </div>
     <div class="col-lg-6">
@@ -62,7 +64,7 @@
   <div class="row align-items-center">
     <div class="col-lg-6 order-lg-2">
       <div class="p-5">
-        <img class="img-fluid rounded-circle" src="../assets/images/03.jpg" alt="">
+        <%= image_tag "profile3.gif", class: 'img-fluid rounded-circle' %>
       </div>
     </div>
     <div class="col-lg-6 order-lg-1">

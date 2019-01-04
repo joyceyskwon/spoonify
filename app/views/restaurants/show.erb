@@ -1,4 +1,7 @@
 <%= stylesheet_link_tag "application" %>
+<%= image_tag "pooh.gif", class: 'img-fluid rounded-circle' %>
+<br>
+<br>
 <h1><%= @restaurant.name.capitalize %></h1>
 <br>
 <p>This restaurant is saved in <%= link_to @restaurant.list.list_name.capitalize, list_path(@restaurant.list), class: 'link-to' %> list!</p>

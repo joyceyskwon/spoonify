@@ -2,6 +2,9 @@
 <% if current_user.id != @list.user_id %>
 
   <% if @list.public? %>
+    <%= image_tag "food2.gif", class: 'img-fluid rounded-circle' %>
+    <br>
+    <br>
     <h1><%= @list.list_name.capitalize %></h1>
     <br>
     <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id), class: 'link-to' %></p>
@@ -14,10 +17,16 @@
     <%= button_to 'Go back to your profile', user_path(current_user), method: :get, class: 'btn btn-primary' %>
     <br>
   <% else %>
+    <%= image_tag "private.gif", class: 'img-fluid rounded-circle' %>
+    <br>
+    <br>
     <%= flash[:notice] = 'Sorry, this list is private!' %>
   <% end %>
 
 <% else %>
+  <%= image_tag "food2.gif", class: 'img-fluid rounded-circle' %>
+  <br>
+  <br>
   <h1><%= @list.list_name.capitalize %></h1>
     <p>Creator: <%= link_to @list.user.username.capitalize, user_path(@list.user_id), class: 'link-to' %></p>
     <br>

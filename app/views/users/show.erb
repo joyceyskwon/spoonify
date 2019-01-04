@@ -1,4 +1,7 @@
 <%= stylesheet_link_tag "application" %>
+    <%= image_tag "profile4.gif", class: 'img-fluid rounded-circle' %>
+    <br>
+    <br>
     <h1><%= @user.username.capitalize %></h1>
 
     <% if current_user.id != @user.id %>
@@ -17,7 +20,7 @@
   <br>
     <% @user.lists.each do |list| %>
       <%= link_to list.list_name.capitalize, list, class: "link-to" %>
-      <p><%= list.restaurants.count %> spots</p>
+      <p><%= list.restaurants.count %> spot(s)</p>
       <p>___________________________________</p>
     <% end %>
 
