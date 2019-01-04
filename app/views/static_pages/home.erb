@@ -3,7 +3,7 @@
   <div class="masthead-content">
     <div class="container">
     <h1 class="masthead-heading mb-0">🥄Spoonify</h1>
-    <h2 class="masthead-subheading mb-0">Favorite places to eat in one place!</h2>
+    <h2 class="masthead-subheading mb-0">Foodlist not playlist!</h2>
     <br>
     <%= button_to 'Explore', lists_path, method: :get, class: 'btn btn-primary', remote: true %><br>
     <br>
@@ -13,8 +13,8 @@
       <%# <%= select_tag 'list_id', options_for_select(@lists.collect{ |list| [list.list_name, list.id] }) %>
       <%= submit_tag("Search", name: nil, class: 'btn btn-primary') %>
     <% end %>
+    </div>
   </div>
-</div>
   <div class="bg-circle-1 bg-circle"></div>
   <div class="bg-circle-2 bg-circle"></div>
   <div class="bg-circle-3 bg-circle"></div>

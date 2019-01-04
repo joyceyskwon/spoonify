@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag "application" %>
 <h1>New Restaurant</h1>
-
+<br>
 <%= form_for @restaurant do |f| %>
   <%= f.collection_select :list_id, @lists, :id, :list_name %><br>
   <br>
@@ -9,5 +10,5 @@
   <%= f.label :yelp_url %><br>
   <%= f.text_field :yelp_url %><br>
   <br>
-  <%= f.submit 'Enlist new restaurant' %>
+  <%= f.submit 'Enlist new restaurant', class: 'btn btn-primary' %>
 <% end %>

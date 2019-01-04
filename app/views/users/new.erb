@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag "application" %>
 <h1>Sign up</h1>
-
+<br>
 <%= form_for @user do |f| %>
   <%= f.label :username %><br>
   <%= f.text_field :username %><br>
@@ -7,5 +8,5 @@
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
   <br>
-  <%= f.submit "Create account" %>
+  <%= f.submit "Create account", class: 'btn btn-primary' %>
 <% end %>

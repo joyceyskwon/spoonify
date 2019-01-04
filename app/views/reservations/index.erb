@@ -2,7 +2,7 @@
 <h1>Reservations</h1>
 
 <% current_user.reservations.each do |reservation| %>
-  <p>At <%= link_to reservation.restaurant.name.capitalize, restaurant_path(reservation.restaurant_id), class: 'link-to' %> on <%= reservation.date_time %> for <%= reservation.num_of_people %></p>
+  <p>At <%= link_to reservation.restaurant.name.capitalize, restaurant_path(reservation.restaurant_id), class: 'link-to' %> on <%= reservation.date_time %> for <%= reservation.num_of_people %> people</p>
   <%= button_to 'Edit this reservation', edit_reservation_path(reservation), method: :get, class: 'btn btn-primary' %>
   <br>
 <% end %>

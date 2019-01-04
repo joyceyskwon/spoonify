@@ -3,10 +3,9 @@
 <br>
 
 <% current_user.followeds.each do |followed| %>
-  <p>__________________________________________________________</p>
   <%= link_to followed.username.capitalize, followed, class: "link-to" %><br>
-  <p>__________________________________________________________</p>
   <br>
 <% end %>
-
-<%= button_to 'Back to profile', user_path(current_user), method: :get, class: "link-to", remote: true %>
+<br>
+<br>
+<%= button_to 'Back to profile', user_path(current_user), method: :get, class: "btn btn-primary", remote: true %>

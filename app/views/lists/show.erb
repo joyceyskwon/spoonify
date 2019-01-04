@@ -9,7 +9,10 @@
     <% @list.restaurants.each do |restaurant| %>
       <%= link_to restaurant.name, restaurant, class: 'link-to' %><br>
       <br>
+      <br>
     <% end %>
+    <%= button_to 'Go back to your profile', user_path(current_user), method: :get, class: 'btn btn-primary' %>
+    <br>
   <% else %>
     <%= flash[:notice] = 'Sorry, this list is private!' %>
   <% end %>
@@ -28,7 +31,6 @@
     <%= button_to 'Add more spots!!!', new_restaurant_path, method: :get, class: 'btn btn-primary' %>
     <br>
     <%= button_to 'Edit list', edit_list_path, method: :get, class: 'btn btn-primary' %>
-
 
 
 <% end %>

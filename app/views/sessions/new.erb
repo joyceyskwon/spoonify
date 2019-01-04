@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag "application" %>
 <h1>Login</h1>
-
+<br>
 <%= form_tag(login_path) do %>
   <%= label_tag :username %><br>
   <%= text_field_tag :username %><br>
@@ -7,5 +8,5 @@
   <%= label_tag :password %><br>
   <%= password_field_tag :password %><br>
   <br>
-  <%= submit_tag 'Login' %>
+  <%= submit_tag 'Login', class: 'btn btn-primary' %>
 <% end %>
