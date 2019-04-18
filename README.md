@@ -1,4 +1,4 @@
-# Spoonify
+# Spoonify🥄
 
 Thank you for using Spoonify. This is a full Ruby on Rails web app for restaurant recommendations between friends and family.
 
