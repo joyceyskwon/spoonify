@@ -10,11 +10,11 @@ View [demo](https://youtu.be/bWe333-MJ80)
 - [Models / Relationship](#models--relationship)
 - [Future Development](#future-development)
 
-## Installation
+## 🛠Installation
 
 To get started with Spoonify, fork and clone this repository to your local computer, ```cd``` into the project, and run ```bundle install```. Make sure you have the right Ruby version. (2.5.3)
 
-## Models / Relationship
+## ⛵️Models / Relationship
 
 Spoonify utilizes five models:
 
@@ -38,7 +38,7 @@ The ```restaurant``` model belongs to a ```list``` model, and has many ```reserv
 
 The ```reservation``` model belongs to the signed in user and a restaurant. As a user, you are able to create many reservations at multiple restaurants.
 
-## Future Development
+## 🚀Future Development
 
 ### External API
 
