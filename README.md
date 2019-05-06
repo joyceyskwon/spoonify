@@ -45,10 +45,10 @@ The ```reservation``` model belongs to the signed in user and a restaurant. As a
 
 ## 🚀Future Development
 
-### ⛓External API
+### External API
 
 Next feature is to utilize external Yelp API to pull geo-location sensitive information for restaurants.
 
-### ⭐️Incentives
+### Incentives
 
 Adding points table to keep track of how many reservations were made by your followers through your list. The more reservations will give you more points, which can potentially be transferrable as restaurant discounts.
