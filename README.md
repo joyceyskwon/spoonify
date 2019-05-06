@@ -23,23 +23,23 @@ To get started with Spoonify, fork and clone this repository to your local compu
 
 Spoonify utilizes five models:
 
-### 👩‍💼User
+### User
 
 The ```user``` model handles the self-referential relationship between the users; users can follow each other and be followed by each other as well. It has foreign keys for ```follower``` and ```followed``` in order for users to follow and to be followed simultaneously. Also it manages all the aspects of user accounts, including login/signup, and updating account information.
 
-### 👭Following
+### Following
 
 Spoonify uses the self-referential relationship model, establishing one direction relationship at a time. Users can follow other users, as well as receive follower, but they are not able to follow themselves. When two users follow each other, there are two instances of the ```following``` in the database.
 
-### 📚List
+### List
 
 User is able to create many lists containing many restaurants. As a user, you are able to create, update, and delete lists. Each list is searchable by its title and view-able depending on whether it is set to public or not.
 
-### 🍽Restaurant
+### Restaurant
 
 The ```restaurant``` model belongs to a ```list``` model, and has many ```reservation``` instances. Each restaurant has a name and a Yelp URL for more information. Also, it has custom validations for its name and a Yelp URL.
 
-### 📍Reservation
+### Reservation
 
 The ```reservation``` model belongs to the signed in user and a restaurant. As a user, you are able to create many reservations at multiple restaurants.
 
